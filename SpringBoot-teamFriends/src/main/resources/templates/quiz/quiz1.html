@@ -1,0 +1,51 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--	<title>Quiz</title>-->
+<!--	<meta charset="utf-8" />-->
+<!--</head>-->
+
+<!--<body>-->
+<!--	<h1 th:each="res : ${dbList}" th:text="${res.question}"></h1>-->
+
+<!--	<form method="get" action="#" th:action="@{/right}">-->
+<!--		<input type="submit" th:value="${res.name}" th:each="res : ${dbList}">-->
+<!--	</form>-->
+<!--	<form method="get" action="#" th:action="@{/wrong}">-->
+<!--		<input type="submit" th:value="${res.name}" th:each="res : ${dbList}">-->
+<!--	</form>-->
+<!--	<form method="get" action="#" th:action="@{/wrong}">-->
+<!--		<input type="submit" th:value="${res.name}" th:each="res : ${dbList}">-->
+<!--	</form>-->
+<!--	<form method="get" action="#" th:action="@{/wrong}">-->
+<!--		<input type="submit" th:value="${res.name}" th:each="res : ${dbList}">-->
+<!--	</form>-->
+<!--</body>-->
+
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Quiz</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<div th:each="question : ${questions}">
+		<h1 th:text="${question.question}"></h1>
+		<form method="get" action="#" th:action="@{/checkAnswer}">
+			<div th:each="choice : ${'choices_' + question.id}">
+				<input type="radio" th:id="${'choice_' + choice.id}" th:name="'question_' + ${question.id}"
+					th:value="${choice.name}">
+				<label th:for="${'choice_' + choice.id}" th:text="${choice.name}"></label><br>
+			</div>
+			<input type="hidden" th:name="'correct_answer_' + ${question.id}" th:value="${question.name}">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+
+</html>
