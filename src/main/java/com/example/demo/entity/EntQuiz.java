@@ -4,15 +4,6 @@ public class EntQuiz {
 
 	private int id;
 	private String name;
-	private String question;
-
-	public String getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(String question) {
-		this.question = question;
-	}
 
 	public EntQuiz() {};
 
@@ -31,5 +22,12 @@ public class EntQuiz {
 	public void setName(String name) {
 		this.name = name;
 	}
-}	
 	
+	public int getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+}
