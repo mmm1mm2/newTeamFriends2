@@ -1,4 +1,4 @@
-package com.example.demo.quiz;
+/*package com.example.demo.quiz;
 
 public class Quiz {
 	
@@ -15,6 +15,6 @@ public class Quiz {
 		}
 }
 	
-
+*/
 
 
